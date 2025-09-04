@@ -1,8 +1,8 @@
 import {Injectable} from '@angular/core';
 @Injectable()
-export class IdGeneratorService{
+export class UserBadgeGeneratorService{
   constructor(){};
-  public createId=(prefix:string):string=>{
-    return prefix+'-'+String(Math.floor(Math.random()*10000)).padStart(4, '0');
+  public generateId=():string=>{
+    return 'USERID'+String(Math.floor(Math.random()*100000)).padStart(6, '0');
   }
 }
