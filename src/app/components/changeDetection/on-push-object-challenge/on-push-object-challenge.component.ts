@@ -1,11 +1,6 @@
 import {Component, Input, ViewEncapsulation, ChangeDetectionStrategy} from '@angular/core';
-interface todo{
-  id:number;
-  text:string;
-  done:boolean;
-}
 @Component({
-  selector:'app-root',
+  selector:'app-child-on-push-object-challenge',
   standalone:true,
   imports:[],
   templateUrl:'./on-push-object-challenge.component.html',
@@ -13,7 +8,8 @@ interface todo{
   encapsulation:ViewEncapsulation.ShadowDom,
   changeDetection:ChangeDetectionStrategy.OnPush
 })
-export class OnPushObjectChallengeComponent{
+export class OnPushObjectChallenge{
   constructor(){};
-  public myTodo:todo={id:1, text:'learn angular', done:false};
+  @Input() isDone:boolean=false;
+  @Input() text:string='';
 }
