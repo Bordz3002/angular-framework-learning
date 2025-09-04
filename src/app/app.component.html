@@ -1,6 +1,7 @@
 <!DOCTYPE html5>
 <main>
   <section>
-    <app-child-encapsulated></app-child-encapsulated>
+    <app-child-on-push [message]="message"></app-child-on-push>
+    <button type="button" (click)="changeMessage()">change</button>
   </section>
 </main>
