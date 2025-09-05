@@ -1,0 +1,12 @@
+<main>
+  <section>
+    <ul>
+      @for(config of getUserEntries(); track config.key){
+        <li><strong><span>{{config.key}}: {{config.value}}</span></strong></li>
+      }
+      @empty {
+        <strong><span>empty data</span></strong>
+      }
+    </ul>
+  </section>
+</main>
