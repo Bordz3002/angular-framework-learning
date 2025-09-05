@@ -1,9 +1,9 @@
 import {Component, ViewEncapsulation, ChangeDetectionStrategy} from '@angular/core';
-import {IdGeneratorComponent} from './components/components-challenge/user-badge-challenge/user-badge-challenge.component';
+import {OneWayCommunicationComponent} from './components/communication/one-way/one-way.component';
 @Component({
   selector:'app-root',
   standalone:true,
-  imports:[IdGeneratorComponent],
+  imports:[OneWayCommunicationComponent],
   templateUrl:'./app.component.html',
   styleUrl:'./app.component.css',
   encapsulation:ViewEncapsulation.ShadowDom
