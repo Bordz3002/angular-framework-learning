@@ -1,13 +1,14 @@
-import {Component, ViewEncapsulation, ChangeDetectionStrategy} from '@angular/core';
-import {OneWayCommunicationComponent} from './components/communication/one-way/one-way.component';
+import {Component, ViewEncapsulation} from '@angular/core';
+import {OneWayChallengeComponent} from './components/communication/one-way-challenge/one-way-challenge.component';
 @Component({
-  selector:'app-root',
+  selector:'one-way-communication-challenge',
   standalone:true,
-  imports:[OneWayCommunicationComponent],
+  imports:[OneWayChallengeComponent],
   templateUrl:'./app.component.html',
   styleUrl:'./app.component.css',
   encapsulation:ViewEncapsulation.ShadowDom
 })
 export class AppComponent{
   constructor(){};
+  public message:string='hello from parent';
 }
