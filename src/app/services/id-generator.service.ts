@@ -3,6 +3,6 @@ import {Injectable} from '@angular/core';
 export class UserBadgeGeneratorService{
   constructor(){};
   public generateId=():string=>{
-    return 'USERID'+String(Math.floor(Math.random()*100000)).padStart(6, '0');
+    return 'USERID:'+String(Math.floor(Math.random()*100000)).padStart(6, '0');
   }
 }

@@ -3,8 +3,11 @@ import {IdGeneratorComponent} from './components/components-challenge/user-badge
 @Component({
   selector:'app-root',
   standalone:true,
-  imports:[],
+  imports:[IdGeneratorComponent],
   templateUrl:'./app.component.html',
   styleUrl:'./app.component.css',
   encapsulation:ViewEncapsulation.ShadowDom
 })
+export class AppComponent{
+  constructor(){};
+}
