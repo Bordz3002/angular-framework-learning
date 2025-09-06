@@ -1,0 +1,6 @@
+<main>
+  <section>
+    <input type="text" [value]="user.name" (input)="updateUser('name', $event)"placeholder="name" required>
+    <input type="text" [value]="user.email" (input)="updateUser('email', $event)" placeholder="email" required>
+  </section>
+</main>

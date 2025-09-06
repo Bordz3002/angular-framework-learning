@@ -1,8 +1,9 @@
 <main>
-  <header><strong><h2>two way communication challenge</h2></strong></header>
   <section>
-    <two-way-challenge-component [(username)]="username"></two-way-challenge-component>
-    <h3>parent sees: <strong>{{username}}</strong></h3>
-    <button type="button" (click)="reset()">reset</button>
+    <strong><span>child: </span></strong>
+    <two-way-communication-object-component [(user)]="user"></two-way-communication-object-component>
+    <strong><span>parent: </span></strong><br>
+    <strong><span>username: {{user.name}}</span></strong><br>
+    <strong><span>email: {{user.email}}</span></strong>
   </section>
 </main>

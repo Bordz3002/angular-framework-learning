@@ -1,9 +1,13 @@
 import {Component, ViewEncapsulation, ChangeDetectionStrategy} from '@angular/core';
-import {TwoWayChallengeComponent} from './components/communication/two-way-challenge/two-way-challenge.component';
+import {TwoWayObjectComponent} from './components/communication/two-way-object/two-way-object.component';
+interface User{
+  name:string;
+  email:string;
+}
 @Component({
   selector:'app-root',
   standalone:true,
-  imports:[TwoWayChallengeComponent],
+  imports:[TwoWayObjectComponent],
   templateUrl:'./app.component.html',
   styleUrl:'./app.component.css',
   encapsulation:ViewEncapsulation.ShadowDom,
@@ -11,8 +15,14 @@ import {TwoWayChallengeComponent} from './components/communication/two-way-chall
 })
 export class AppComponent{
   constructor(){};
-  public username:string='alice';
+  public user:User={
+    name:'alice',
+    email:'alice@mail.com'
+  }
   public reset=():void=>{
-    this.username='alice';
+    this.user={
+      name:'alice',
+      email:'alice@mail'
+    }
   }
 }
