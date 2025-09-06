@@ -1,9 +1,9 @@
 import {Component, ViewEncapsulation, ChangeDetectionStrategy} from '@angular/core';
-import {TwoWayP2Component} from './components/communication/two-way-p2/two-way-p2.component';
+import {TwoWayChallengeComponent} from './components/communication/two-way-challenge/two-way-challenge.component';
 @Component({
   selector:'app-root',
   standalone:true,
-  imports:[TwoWayP2Component],
+  imports:[TwoWayChallengeComponent],
   templateUrl:'./app.component.html',
   styleUrl:'./app.component.css',
   encapsulation:ViewEncapsulation.ShadowDom,
@@ -11,8 +11,8 @@ import {TwoWayP2Component} from './components/communication/two-way-p2/two-way-p
 })
 export class AppComponent{
   constructor(){};
-  public count:number=0;
+  public username:string='alice';
   public reset=():void=>{
-    this.count=0;
+    this.username='alice';
   }
 }

@@ -1,5 +1,8 @@
 <main>
+  <header><strong><h2>two way communication challenge</h2></strong></header>
   <section>
-    <two-way-communication-p2-component [(count)]="count"></two-way-communication-p2-component>
+    <two-way-challenge-component [(username)]="username"></two-way-challenge-component>
+    <h3>parent sees: <strong>{{username}}</strong></h3>
+    <button type="button" (click)="reset()">reset</button>
   </section>
 </main>
