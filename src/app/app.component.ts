@@ -1,19 +1,20 @@
-import {Component, ViewEncapsulation, ChangeDetectionStrategy, ViewChild, AfterViewInit} from '@angular/core';
-import {ViewChild1Component} from './components/communication/view-child/view-child-1/view-child-1.component';
-import { throwIfEmpty } from 'rxjs';
+import {Component, ViewEncapsulation, ViewChild, AfterViewInit} from '@angular/core';
+import {ViewChild2Component} from './components/communication/view-child/view-child-2/view-child-2.component';
 @Component({
   selector:'app-root',
   standalone:true,
-  imports:[ViewChild1Component],
+  imports:[ViewChild2Component],
   templateUrl:'./app.component.html',
   styleUrl:'./app.component.css',
   encapsulation:ViewEncapsulation.ShadowDom
 })
 export class AppComponent implements AfterViewInit{
   constructor(){};
-  public message!:string;
-  @ViewChild(ViewChild1Component) viewChild1Component!:ViewChild1Component;
+  @ViewChild(ViewChild2Component) viewChild2Component!:ViewChild2Component;
   ngAfterViewInit(){
-    setTimeout(():void=>{this.message=this.viewChild1Component.text}, 1000);
+    this.viewChild2Component.notify();
+  }
+  public notify=():void=>{
+    this.viewChild2Component.notify();
   }
 }
