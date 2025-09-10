@@ -1,20 +1,21 @@
 import {Component, ViewEncapsulation, ViewChild, AfterViewInit} from '@angular/core';
-import {ViewChild2Component} from './components/communication/view-child/view-child-2/view-child-2.component';
+import {ViewChild3Component} from './components/communication/view-child/view-child-3/view-child-3.component';
 @Component({
   selector:'app-root',
   standalone:true,
-  imports:[ViewChild2Component],
+  imports:[ViewChild3Component],
   templateUrl:'./app.component.html',
   styleUrl:'./app.component.css',
   encapsulation:ViewEncapsulation.ShadowDom
 })
 export class AppComponent implements AfterViewInit{
   constructor(){};
-  @ViewChild(ViewChild2Component) viewChild2Component!:ViewChild2Component;
+  @ViewChild(ViewChild3Component) viewChild3Component!:ViewChild3Component;
   ngAfterViewInit(){
-    this.viewChild2Component.notify();
+    this.viewChild3Component.childAlert();
   }
   public notify=():void=>{
-    this.viewChild2Component.notify();
+    this.viewChild3Component.childMessage='changed by parent';
+    this.viewChild3Component.childAlert();
   }
 }
