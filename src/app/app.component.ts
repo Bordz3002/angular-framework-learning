@@ -13,7 +13,7 @@ export class AppComponent implements AfterViewInit{
   @ViewChild(ViewChild4Component) viewChild4Component!:ViewChild4Component;
   @ViewChild('alertMessage') inputRef!:ElementRef;
   ngAfterViewInit(){
-    this.viewChild4Component.message='message from parent';
+    this.viewChild4Component.message=this.inputRef.nativeElement.value;
   }
   public alert=():void=>{
     this.viewChild4Component.alertMessage();
