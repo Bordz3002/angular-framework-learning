@@ -1,8 +1,13 @@
 <main>
   <section>
-    <view-child-4-component></view-child-4-component>
+    @for(name of names; track name){
+      <view-child-6-component [componentName]="name"></view-child-6-component>
+    }
   </section>
   <section>
-    <button type="button" (click)="alert()">alert</button>
+    <input #messageInput type="text" placeholder="enter the new message">
+    <br>
+    <button type="button" (click)="updateAllChildrenMessage(messageInput.value)">update all</button>
+    <button type="button" (click)="greetAllChildren()">greet all</button>
   </section>
 </main>
