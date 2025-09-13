@@ -1,26 +1,28 @@
-import {Component, ViewEncapsulation, ViewChildren, QueryList, AfterViewInit} from '@angular/core';
+import {Component, ViewEncapsulation, ChangeDetectionStrategy, ViewChildren, QueryList, AfterViewInit} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {ViewChild6Component} from './components/communication/view-child/view-child-6/view-child-6.component';
-import { setThrowInvalidWriteToSignalError } from '@angular/core/primitives/signals';
+import {ViewChild7Component} from './components/communication/view-child/view-child-7/view-child-7.component';
 @Component({
   selector:'app-root',
   standalone:true,
-  imports:[ViewChild6Component, CommonModule],
+  imports:[ViewChild7Component, CommonModule],
   templateUrl:'./app.component.html',
   styleUrl:'./app.component.css',
-  encapsulation:ViewEncapsulation.ShadowDom
+  encapsulation:ViewEncapsulation.Emulated,
+  changeDetection:ChangeDetectionStrategy.Default
 })
 export class AppComponent implements AfterViewInit{
-  public names:Array<string>=['bob', 'charlie', 'alice'];
-  @ViewChildren(ViewChild6Component) childrenComponent!:QueryList<ViewChild6Component>;
+  public names:Array<string>=['bob', 'charlie'];
+  public childComponentCount:number=0;
+  @ViewChildren(ViewChild7Component) childComponents!:QueryList<ViewChild7Component>;
   constructor(){};
   ngAfterViewInit(){
-    console.log('Children: ', this.childrenComponent.toArray());
+    this.childComponentCount=this.childComponents.length;
+    this.childComponents.changes.subscribe((list:QueryList<ViewChild7Component>)=>{
+      this.childComponentCount=list.length;
+    })
   }
-  public updateAllChildrenMessage=(newMessage:string):void=>{
-    this.childrenComponent.forEach(child =>child.updateMessage(newMessage));
+  public addChild=(childName:string):void=>{
+    if(childName.trim()){ this.names.push(childName);}
   }
-  public greetAllChildren=():void=>{
-    this.childrenComponent.forEach(child =>child.greet());
-  }
+  public removeLastChild=():void=>{ this.names.pop();}
 }

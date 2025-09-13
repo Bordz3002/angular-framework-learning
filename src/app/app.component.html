@@ -1,13 +1,14 @@
 <main>
   <section>
     @for(name of names; track name){
-      <view-child-6-component [componentName]="name"></view-child-6-component>
+      <view-child-7-component [childComponentName]="name"></view-child-7-component>
     }
+    <span>total child: <strong>{{childComponentCount}}</strong></span>
   </section>
   <section>
-    <input #messageInput type="text" placeholder="enter the new message">
+    <input #newChildComponentInput type="text" placeholder="enter new child component name">
     <br>
-    <button type="button" (click)="updateAllChildrenMessage(messageInput.value)">update all</button>
-    <button type="button" (click)="greetAllChildren()">greet all</button>
+    <button type="button" (click)="addChild(newChildComponentInput.value); newChildComponentInput.value=''">add Child</button>
+    <button type="button" (click)="removeLastChild()">remove last child</button>
   </section>
 </main>
