@@ -1,0 +1,2 @@
+- [x] Update app.component.html to properly project content with header attribute
+- [x] Add ::ng-deep styles for [header] in demo3.component.css to style the projected content
