@@ -1,14 +1,17 @@
 <main>
+  <header>
+    <h3><strong>content child demo 1 PARENT</strong></h3>
+  </header>
   <section>
-    @for(name of names; track name){
-      <view-child-7-component [childComponentName]="name"></view-child-7-component>
-    }
-    <span>total child: <strong>{{childComponentCount}}</strong></span>
-  </section>
-  <section>
-    <input #newChildComponentInput type="text" placeholder="enter new child component name">
-    <br>
-    <button type="button" (click)="addChild(newChildComponentInput.value); newChildComponentInput.value=''">add Child</button>
-    <button type="button" (click)="removeLastChild()">remove last child</button>
+    <content-child-demo1>
+      <span>hello from parent</span>
+    </content-child-demo1>
+    <content-child-demo1>
+      <ul>
+        <li>hello</li>
+        <li>from</li>
+        <li>mars</li>
+      </ul>
+    </content-child-demo1>
   </section>
 </main>
