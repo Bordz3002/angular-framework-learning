@@ -1,9 +1,9 @@
 import {Component, ViewEncapsulation, ChangeDetectionStrategy} from '@angular/core';
-import {ContentChildDemo5} from './components/communication/content-child/demo5/demo5.component';
+import {ContentChildDemo6} from './components/communication/content-child/demo6/demo6.component';
 @Component({
   selector:'app-root',
   standalone:true,
-  imports:[ContentChildDemo5],
+  imports:[ContentChildDemo6],
   templateUrl:'./app.component.html',
   styleUrl:'./app.component.css',
   encapsulation:ViewEncapsulation.Emulated,
