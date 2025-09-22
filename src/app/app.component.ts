@@ -3,23 +3,24 @@ import{
   ViewEncapsulation,
   ChangeDetectionStrategy
 } from '@angular/core';
+// ngOnInit demo component
 import{
-  FormsModule
-} from '@angular/forms';
-import{
-  ComponentLifecycleDemo1Component
-} from './components/communication/component-lifecycle/demo1/demo1.component';
+  NgOnInitDemoComponent
+} from './components/communication/component-lifecycle/ngOnInit/demo/demo.component';
 @Component({
   selector:'app-root',
   standalone:true,
-  imports:[ComponentLifecycleDemo1Component, FormsModule],
+  imports:[NgOnInitDemoComponent],
   templateUrl:'./app.component.html',
   styleUrl:'./app.component.css',
   encapsulation:ViewEncapsulation.Emulated,
   changeDetection:ChangeDetectionStrategy.Default
 })
 export class AppComponent{
-  // input reference to ComponentLifecycleDemo1Component
-  public input_text!:string;
+  // userID for ngOnInit component
+  public selected_user:number=1;
   constructor(){};
+  public setUser(ID:number):void{
+    this.selected_user=(ID>=1 && ID <=2)? ID:0;
+  }
 }

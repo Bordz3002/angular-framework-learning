@@ -1,11 +1,11 @@
 <main>
   <section>
-    <!-- parent input to component-lifecycle-demo1-component -->
-    <!-- test ngOnChanges -->
-    <input [(ngModel)]="input_text" placeholder="enter here...">
+    <!-- ngOnInit lifecycle demo -->
+     <demo-component [userID]="selected_user"></demo-component>
   </section>
   <section>
-    <!-- component-lifecycle-demo1-component -->
-     <demo1-component [name]="input_text"></demo1-component>
+    <!-- parent input to child ngOnInit demo component -->
+     <button (click)="setUser(1)">load user1</button>
+     <button (click)="setUser(2)">load user2</button>
   </section>
 </main>
