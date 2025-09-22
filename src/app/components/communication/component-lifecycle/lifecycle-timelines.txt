@@ -1,0 +1,10 @@
+constructor
+→ ngOnChanges
+→ ngOnInit
+→ ngDoCheck
+→ ngAfterContentInit
+→ ngAfterContentChecked
+→ ngAfterViewInit
+→ ngAfterViewChecked
+(repeat checks as needed)
+→ ngOnDestroy

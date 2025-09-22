@@ -1,7 +1,11 @@
 <main>
   <section>
-    <content-child-demo6>
-      <p #demo6Message>hello loi</p>
-    </content-child-demo6>
+    <!-- parent input to component-lifecycle-demo1-component -->
+    <!-- test ngOnChanges -->
+    <input [(ngModel)]="input_text" placeholder="enter here...">
+  </section>
+  <section>
+    <!-- component-lifecycle-demo1-component -->
+     <demo1-component [name]="input_text"></demo1-component>
   </section>
 </main>
