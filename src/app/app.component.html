@@ -1,11 +1,5 @@
 <main>
   <section>
-    <!-- ngOnInit lifecycle demo -->
-     <demo-component [userID]="selected_user"></demo-component>
-  </section>
-  <section>
-    <!-- parent input to child ngOnInit demo component -->
-     <button (click)="setUser(1)">load user1</button>
-     <button (click)="setUser(2)">load user2</button>
+    <demo-component [items]="items"></demo-component>
   </section>
 </main>
