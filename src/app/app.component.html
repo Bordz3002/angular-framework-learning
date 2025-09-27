@@ -1,13 +1,5 @@
 <main>
   <section>
-    <input #data_input type="text" placeholder="enter new data">
-    <br>
-    <button type="button" (click)="add(data_input.value); data_input.value=''">add data</button>
-    <button type="button" (click)="remove()">remove</button>
+    <ng-after-view-init-demo-component></ng-after-view-init-demo-component>
   </section>
-  <ng-after-content-checked-component>
-    @for(text of texts; track text){
-      <p p-identifier>{{text}}</p>
-    }
-  </ng-after-content-checked-component>
 </main>
