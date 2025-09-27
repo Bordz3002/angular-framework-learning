@@ -1,16 +1,13 @@
 <main>
-  <header>
-    <span>app component</span>
-  </header>
-  <section>
-    <ng-after-content-init-challenge-component>
-      @for(text of texts; track text){
-        <p highlight>{{text}}</p>
-      }
-    </ng-after-content-init-challenge-component>
-  </section>
   <section>
     <input #data_input type="text" placeholder="enter new data">
-    <button type="button" (click)="add(data_input.value); data_input.value=''">add</button>
+    <br>
+    <button type="button" (click)="add(data_input.value); data_input.value=''">add data</button>
+    <button type="button" (click)="remove()">remove</button>
   </section>
+  <ng-after-content-checked-component>
+    @for(text of texts; track text){
+      <p p-identifier>{{text}}</p>
+    }
+  </ng-after-content-checked-component>
 </main>
